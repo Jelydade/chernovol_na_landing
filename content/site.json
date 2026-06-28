@@ -1,0 +1,15 @@
+{
+  "name": "Наталья Черновол",
+  "title": "Гештальт-психолог",
+  "tagline": "Безопасное пространство для ваших изменений",
+  "email": "psychologist@example.com",
+  "phone": "+7 (900) 000-00-00",
+  "telegram": "https://t.me/username",
+  "telegramHandle": "@username",
+  "instagram": "https://instagram.com/username",
+  "instagramHandle": "@username",
+  "city": "Москва",
+  "address": "ул. Примерная, 1",
+  "mapEmbedUrl": "https://yandex.ru/map-widget/v1/?um=constructor%3Aplaceholder&amp;source=constructor",
+  "url": "https://example.com"
+}

@@ -1,0 +1,41 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.gallery > :last-child {
+  grid-column: span 2;
+}
+
+.list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  max-width: 640px;
+}
+
+.list li {
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.list li::before {
+  content: "—";
+  margin-right: 10px;
+  color: var(--sage);
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery > :last-child {
+    grid-column: span 1;
+  }
+}
