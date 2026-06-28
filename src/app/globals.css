@@ -1,29 +1,29 @@
 :root {
   /* Base */
-  --bg: #f5f0ea;
-  --bg-warm: #ebe3d8;
-  --surface: #fffcf8;
-  --surface-muted: #f0e9e1;
-  --border: rgba(58, 52, 46, 0.11);
-  --text: #2a2824;
-  --muted: #5f5a54;
-  --muted-2: #8a837a;
+  --bg: #f2f5f0;
+  --bg-warm: #e6ebe4;
+  --surface: #fcfefb;
+  --surface-muted: #e8efe9;
+  --border: rgba(45, 58, 48, 0.11);
+  --text: #243028;
+  --muted: #526055;
+  --muted-2: #7a8b7e;
 
   /* Sage — основной акцент */
-  --sage: #5c7562;
-  --sage-dark: #465a4b;
-  --sage-light: #dde8de;
-  --sage-glow: rgba(92, 117, 98, 0.14);
+  --sage: #527a59;
+  --sage-dark: #3f5f45;
+  --sage-light: #d0e2d4;
+  --sage-glow: rgba(82, 122, 89, 0.2);
 
   /* Peach — второй акцент */
   --peach: #d4a898;
   --peach-dark: #b88472;
-  --peach-light: #f2e4da;
-  --peach-glow: rgba(212, 168, 152, 0.22);
+  --peach-light: #f0e8e2;
+  --peach-glow: rgba(212, 168, 152, 0.12);
 
   /* Clay — тёплый нейтраль для глубины */
-  --clay: #c4b0a0;
-  --clay-light: #e8ddd4;
+  --clay: #b8c4b4;
+  --clay-light: #dde5da;
 
   --primary: var(--sage);
   --primary-ink: #fffcf8;
@@ -81,18 +81,18 @@ body {
   flex-direction: column;
   color: var(--text);
   background: radial-gradient(
-      920px 520px at 8% -8%,
+      980px 540px at 8% -8%,
       var(--sage-glow),
       transparent 58%
     ),
     radial-gradient(
-      760px 440px at 92% 2%,
+      720px 460px at 88% 4%,
       var(--peach-glow),
-      transparent 52%
+      transparent 50%
     ),
     radial-gradient(
-      600px 400px at 50% 100%,
-      rgba(196, 176, 160, 0.12),
+      640px 420px at 50% 100%,
+      rgba(82, 122, 89, 0.1),
       transparent 55%
     ),
     var(--bg);

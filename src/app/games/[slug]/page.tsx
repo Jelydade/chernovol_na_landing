@@ -5,7 +5,6 @@ import { Footer } from "@/components/layout/Footer";
 import { GamePageContent } from "@/components/landing/GamePageContent";
 import { getGameBySlug, getGameSlugs } from "@/lib/games";
 import s from "@/styles/site.module.css";
-import g from "../games.module.css";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -27,11 +26,6 @@ export const generateMetadata = async ({
   };
 };
 
-const accentClassMap = {
-  peach: g.accentPeach,
-  sage: g.accentSage,
-} as const;
-
 export default async function GamePage({ params }: PageProps) {
   const { slug } = await params;
   const game = getGameBySlug(slug);
@@ -45,7 +39,8 @@ export default async function GamePage({ params }: PageProps) {
         <GamePageContent
           title={game.title}
           subtitle={game.subtitle}
-          accentClass={accentClassMap[game.accent]}
+          accent={game.accent}
+          cover={game.cover}
           defaultService={game.defaultService}
           forWho={game.forWho}
           results={game.results}

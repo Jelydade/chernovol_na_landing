@@ -4,6 +4,7 @@ title: Территория денег
 subtitle: Игра-помощник при переходе на новый уровень дохода
 metaDescription: Трансформационная игра для проработки денежных установок и перехода на новый уровень дохода.
 accent: peach
+cover: /photos/games/territoriya-deneg-cover.jpg
 defaultService: game-money-individual
 teaser: Для перехода на новый уровень дохода — проработка установок, внутренних блоков и отношения с деньгами. Не коучинг, а глубинная психологическая работа.
 individualPrice: 5 000 ₽

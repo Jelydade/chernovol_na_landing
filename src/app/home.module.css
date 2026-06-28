@@ -10,23 +10,17 @@
 }
 
 .heroPhoto {
+  position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
   aspect-ratio: 4 / 5;
-  background: linear-gradient(
-    155deg,
-    var(--peach-light) 0%,
-    var(--clay-light) 45%,
-    var(--sage-light) 100%
-  );
   border: 1px solid var(--border);
-  display: grid;
-  place-items: center;
-  color: var(--muted-2);
-  font-size: 14px;
-  text-align: center;
-  padding: 24px;
   box-shadow: var(--shadow);
+}
+
+.heroPhotoImage {
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .heroCopy {
@@ -136,6 +130,26 @@
   text-align: center;
 }
 
+.gameCoverWide {
+  aspect-ratio: 16 / 9;
+  margin-bottom: 32px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.gameCoverPhoto {
+  position: relative;
+  padding: 0;
+  display: block;
+}
+
+.gameCoverImage {
+  object-fit: cover;
+  object-position: center;
+}
+
 .gameCardImagePeach {
   background: linear-gradient(145deg, var(--peach-light), var(--surface));
 }
@@ -161,7 +175,7 @@
   border-radius: var(--radius-lg);
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--peach);
+  border-left: 3px solid var(--sage);
   display: grid;
   gap: 12px;
 }

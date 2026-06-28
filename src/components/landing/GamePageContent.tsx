@@ -1,12 +1,15 @@
 import Link from "next/link";
 import { ContactForm } from "@/components/landing/ContactForm";
+import { GameCover } from "@/components/landing/GameCover";
+import { type GameAccent } from "@/lib/games";
 import { type ServiceId } from "@/lib/site-data";
 import s from "@/styles/site.module.css";
 
 type GamePageContentProps = {
   title: string;
   subtitle: string;
-  accentClass: string;
+  accent: GameAccent;
+  cover?: string;
   forWho: string[];
   results: string[];
   process: string[];
@@ -18,7 +21,8 @@ type GamePageContentProps = {
 export const GamePageContent = ({
   title,
   subtitle,
-  accentClass,
+  accent,
+  cover,
   forWho,
   results,
   process,
@@ -41,9 +45,12 @@ export const GamePageContent = ({
 
     <section className={s.section}>
       <div className={s.container}>
-        <div className={`${s.photoWide} ${accentClass}`} style={{ marginBottom: 32 }}>
-          Обложка игры «{title}»
-        </div>
+        <GameCover
+          title={title}
+          cover={cover}
+          accent={accent}
+          variant="wide"
+        />
 
         <div className={s.grid2}>
           <div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -31,9 +32,50 @@ export default function AboutPage() {
         <section className={s.section}>
           <div className={s.container}>
             <div className={styles.gallery}>
-              <div className={s.photo}>Портрет</div>
-              <div className={s.photo}>Рабочее место</div>
-              <div className={s.photoWide}>На обучении / супервизии</div>
+              <figure className={styles.photoItem}>
+                <div className={`${s.photo} ${styles.portrait}`}>
+                  <Image
+                    src="/photos/portrait.png"
+                    alt={`${site.name}, ${site.title.toLowerCase()}`}
+                    fill
+                    sizes="(max-width: 600px) 100vw, 50vw"
+                    className={styles.portraitImage}
+                    priority
+                  />
+                </div>
+                <figcaption className={styles.caption}>{site.name}</figcaption>
+              </figure>
+
+              <figure className={styles.photoItem}>
+                <div className={`${s.photo} ${styles.workspace}`}>
+                  <Image
+                    src="/photos/workspace-cabinet.jpg"
+                    alt="Кабинет для очных консультаций"
+                    fill
+                    sizes="(max-width: 600px) 100vw, 50vw"
+                    className={styles.workspaceImage}
+                  />
+                </div>
+                <figcaption className={styles.caption}>
+                  Уютный кабинет для офлайн встреч
+                </figcaption>
+              </figure>
+
+              <figure className={`${styles.photoItem} ${styles.photoItemWide}`}>
+                <div className={`${s.photoWide} ${styles.conference}`}>
+                  <Image
+                    src="/photos/conference.png"
+                    alt={`${site.name} на гештальт-конференции`}
+                    width={768}
+                    height={1024}
+                    sizes="(max-width: 600px) 100vw, 1120px"
+                    className={styles.conferenceImage}
+                  />
+                </div>
+                <figcaption className={styles.caption}>
+                  Обучение и профессиональное сообщество
+                </figcaption>
+              </figure>
             </div>
           </div>
         </section>

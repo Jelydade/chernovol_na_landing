@@ -4,6 +4,7 @@ title: Переходы
 subtitle: Игра для женщин в период жизненных изменений
 metaDescription: Трансформационная игра для женщин в период жизненных изменений и инициации.
 accent: sage
+cover: /photos/games/perehody-board.jpg
 defaultService: game-perehody-individual
 teaser: Для женщин в период жизненных изменений — кризис 30+, развод, смена профессии. Поддерживающая атмосфера и трансформация через образы и инициацию.
 individualPrice: 5 000 ₽

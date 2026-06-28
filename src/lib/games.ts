@@ -13,6 +13,7 @@ export type Game = {
   accent: GameAccent;
   defaultService: ServiceId;
   teaser: string;
+  cover?: string;
   individualPrice: string;
   groupPrice: string;
   forWho: string[];
@@ -34,6 +35,7 @@ const parseGameFile = (filePath: string): Game => {
     accent: data.accent,
     defaultService: data.defaultService,
     teaser: data.teaser,
+    cover: data.cover,
     individualPrice: data.individualPrice,
     groupPrice: data.groupPrice,
     forWho: data.forWho ?? [],

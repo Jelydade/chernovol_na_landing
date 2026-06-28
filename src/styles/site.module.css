@@ -34,12 +34,8 @@
   gap: 12px;
 }
 
-.brandMark {
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--sage-light), var(--peach-light));
-  border: 1px solid var(--border);
+.brandLogo {
+  flex-shrink: 0;
 }
 
 .brandText {
@@ -76,7 +72,7 @@
 
 .navLink:hover,
 .navLinkActive {
-  background: var(--surface-muted);
+  background: color-mix(in srgb, var(--sage-light) 55%, var(--surface-muted));
   color: var(--text);
 }
 
@@ -111,12 +107,18 @@
 
 .section {
   padding: 56px 0;
+  background: var(--bg);
 }
 
 .sectionAlt {
   composes: section;
-  background: var(--surface-muted);
-  border-block: 1px solid var(--border);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--bg) 32%, var(--surface-muted)) 0%,
+    var(--surface-muted) 16%,
+    var(--surface-muted) 84%,
+    color-mix(in srgb, var(--bg) 32%, var(--surface-muted)) 100%
+  );
 }
 
 .sectionHeader {
@@ -332,10 +334,9 @@
   background: linear-gradient(
     135deg,
     var(--sage-light) 0%,
-    var(--peach-light) 55%,
-    var(--clay-light) 100%
+    color-mix(in srgb, var(--sage-light) 65%, var(--peach-light)) 100%
   );
-  border: 1px solid var(--border);
+  border: 1px solid color-mix(in srgb, var(--sage) 18%, var(--border));
   text-align: center;
   display: grid;
   gap: 16px;
@@ -393,10 +394,13 @@
   margin-top: 0;
 }
 
-.prose ul {
+.prose ul,
+ul.prose {
   list-style: none;
   display: grid;
   gap: 10px;
+  padding: 0;
+  margin: 0;
 }
 
 .prose li {

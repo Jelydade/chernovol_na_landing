@@ -1,16 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ContactForm } from "@/components/landing/ContactForm";
+import { GameCover } from "@/components/landing/GameCover";
 import { getAllGames } from "@/lib/games";
 import { reviews, services, site } from "@/lib/site";
 import s from "@/styles/site.module.css";
 import h from "./home.module.css";
-
-const gameImageClass = {
-  peach: h.gameCardImagePeach,
-  sage: h.gameCardImageSage,
-} as const;
 
 export default function Home() {
   const consultation = services[0];
@@ -43,8 +40,15 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className={h.heroPhoto} aria-label="Фото психолога">
-                Ваше профессиональное фото
+              <div className={h.heroPhoto}>
+                <Image
+                  src="/photos/hero-portrait.jpg"
+                  alt={`${site.name}, ${site.title.toLowerCase()}`}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 50vw"
+                  className={h.heroPhotoImage}
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -174,11 +178,11 @@ export default function Home() {
             <div className={h.gameCards}>
               {games.map((game) => (
                 <article key={game.slug} className={h.gameCard}>
-                  <div
-                    className={`${h.gameCardImage} ${gameImageClass[game.accent]}`}
-                  >
-                    Обложка «{game.title}»
-                  </div>
+                  <GameCover
+                    title={game.title}
+                    cover={game.cover}
+                    accent={game.accent}
+                  />
                   <div className={h.gameCardBody}>
                     <h3 className={s.h3}>{game.title}</h3>
                     <p className={s.cardText}>{game.teaser}</p>
