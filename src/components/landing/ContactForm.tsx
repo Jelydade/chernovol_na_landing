@@ -1,17 +1,18 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { type ServiceId, serviceLabels, site } from "@/lib/site-data";
+import { type ServiceId, serviceLabels } from "@/lib/site-data";
+import {
+  type ApplicationFormState,
+  type ContactChannel,
+  buildApplicationMessage,
+  buildChannelHref,
+  channelActionLabels,
+  channelSuccessHints,
+  contactChannels,
+  openExternal,
+} from "@/lib/contact-channels";
 import styles from "./ContactForm.module.css";
-
-type FormState = {
-  name: string;
-  contact: string;
-  service: ServiceId;
-  format: "online" | "offline" | "any";
-  topic: string;
-  consent: boolean;
-};
 
 type ContactFormProps = {
   defaultService?: ServiceId;
@@ -19,65 +20,100 @@ type ContactFormProps = {
 
 const MAX_TOPIC_LEN = 600;
 
-const formatLabel = (format: FormState["format"]) => {
-  if (format === "online") return "онлайн";
-  if (format === "offline") return "очно";
-  return "любой";
-};
-
-const buildMailto = (state: FormState) => {
-  const subject = `Запись: ${serviceLabels[state.service]} — ${state.name || "без имени"}`;
-  const lines = [
-    `Имя: ${state.name || "—"}`,
-    `Контакт: ${state.contact || "—"}`,
-    `Услуга: ${serviceLabels[state.service]}`,
-    `Формат: ${formatLabel(state.format)}`,
-    "",
-    "Комментарий:",
-    state.topic || "—",
-  ];
-  const url = new URL(`mailto:${site.email}`);
-  url.searchParams.set("subject", subject);
-  url.searchParams.set("body", lines.join("\n"));
-  return url.toString();
-};
-
 const normalize = (value: string) => value.trim();
 
+const getErrors = (state: ApplicationFormState) => {
+  const next: Partial<Record<keyof ApplicationFormState, string>> = {};
+  if (!normalize(state.name)) next.name = "Укажите имя.";
+  if (!normalize(state.contact)) next.contact = "Как с вами связаться?";
+  if (!state.consent) next.consent = "Нужно согласие на обработку данных.";
+  if (state.topic.length > MAX_TOPIC_LEN)
+    next.topic = `Сократите текст до ${MAX_TOPIC_LEN} символов.`;
+  return next;
+};
+
 export const ContactForm = ({ defaultService = "consultation" }: ContactFormProps) => {
-  const [state, setState] = useState<FormState>({
+  const [state, setState] = useState<ApplicationFormState>({
     name: "",
     contact: "",
     service: defaultService,
     format: "any",
     topic: "",
     consent: true,
+    contactChannel: "telegram",
   });
   const [touched, setTouched] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-  const errors = useMemo(() => {
-    const next: Partial<Record<keyof FormState, string>> = {};
-    if (!normalize(state.name)) next.name = "Укажите имя.";
-    if (!normalize(state.contact)) next.contact = "Как с вами связаться?";
-    if (!state.consent) next.consent = "Нужно согласие на обработку данных.";
-    if (state.topic.length > MAX_TOPIC_LEN)
-      next.topic = `Сократите текст до ${MAX_TOPIC_LEN} символов.`;
-    return next;
-  }, [state]);
+  const errors = useMemo(() => getErrors(state), [state]);
+  const isValid = useMemo(() => Object.keys(errors).length === 0, [errors]);
+  const channelHref = useMemo(() => buildChannelHref(state), [state]);
 
-  const isValid = Object.keys(errors).length === 0;
-  const mailto = useMemo(() => buildMailto(state), [state]);
-
-  const setField = <K extends keyof FormState>(key: K, value: FormState[K]) => {
+  const setField = <K extends keyof ApplicationFormState>(
+    key: K,
+    value: ApplicationFormState[K],
+  ) => {
+    setSubmitted(false);
+    setCopied(false);
     setState((prev) => ({ ...prev, [key]: value }));
   };
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const copyMessage = async (message: string) => {
+    try {
+      await navigator.clipboard.writeText(message);
+      setCopied(true);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setTouched(true);
-    if (!isValid) return;
-    window.location.href = mailto;
+
+    const nextErrors = getErrors(state);
+    if (Object.keys(nextErrors).length > 0) return;
+
+    const message = buildApplicationMessage(state);
+    await copyMessage(message);
+    setSubmitted(true);
+    openExternal(buildChannelHref(state));
   };
+
+  if (submitted) {
+    return (
+      <div className={styles.success}>
+        <p className={styles.successTitle}>Заявка готова</p>
+        <p className={styles.successText}>{channelSuccessHints[state.contactChannel]}</p>
+        {copied ? (
+          <p className={styles.successNote}>Текст заявки скопирован в буфер обмена.</p>
+        ) : null}
+        <div className={styles.actions}>
+          <a
+            className={styles.submit}
+            href={channelHref}
+            target={state.contactChannel === "phone" ? undefined : "_blank"}
+            rel={state.contactChannel === "phone" ? undefined : "noopener noreferrer"}
+          >
+            {channelActionLabels[state.contactChannel]}
+          </a>
+        </div>
+        <button
+          type="button"
+          className={styles.reset}
+          onClick={() => {
+            setSubmitted(false);
+            setTouched(false);
+            setCopied(false);
+          }}
+        >
+          Изменить данные
+        </button>
+      </div>
+    );
+  }
 
   return (
     <form className={styles.form} onSubmit={onSubmit} noValidate>
@@ -97,7 +133,7 @@ export const ContactForm = ({ defaultService = "consultation" }: ContactFormProp
         </label>
 
         <label className={styles.field}>
-          <span className={styles.label}>Контакт</span>
+          <span className={styles.label}>Ваш контакт для ответа</span>
           <input
             className={styles.input}
             value={state.contact}
@@ -110,6 +146,32 @@ export const ContactForm = ({ defaultService = "consultation" }: ContactFormProp
           ) : null}
         </label>
       </div>
+
+      <fieldset className={styles.radioGroup}>
+        <legend className={styles.label}>Как связаться с вами</legend>
+        <div className={styles.radioRow}>
+          {contactChannels.map(({ id, label }) => (
+            <label
+              key={id}
+              className={
+                state.contactChannel === id
+                  ? `${styles.radioOption} ${styles.radioOptionActive}`
+                  : styles.radioOption
+              }
+            >
+              <input
+                type="radio"
+                name="contactChannel"
+                value={id}
+                checked={state.contactChannel === id}
+                onChange={() => setField("contactChannel", id as ContactChannel)}
+                className={styles.radioInput}
+              />
+              <span>{label}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
 
       <label className={styles.field}>
         <span className={styles.label}>Услуга</span>
@@ -177,20 +239,13 @@ export const ContactForm = ({ defaultService = "consultation" }: ContactFormProp
       ) : null}
 
       <div className={styles.actions}>
-        <button className={styles.submit} type="submit">
+        <button className={styles.submit} type="submit" disabled={!isValid}>
           Записаться
         </button>
-        <a className={styles.ghost} href={mailto}>
-          Открыть письмо
-        </a>
       </div>
 
       <p className={styles.hint}>
-        Или напишите в{" "}
-        <a className={styles.link} href={site.telegram} target="_blank" rel="noreferrer">
-          Telegram
-        </a>
-        .
+        После отправки откроется выбранный способ связи с готовым сообщением.
       </p>
     </form>
   );

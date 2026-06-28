@@ -1,7 +1,11 @@
 .accentPeach {
-  background: linear-gradient(135deg, var(--peach-light), #fff) !important;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--sage-dark) 14%, var(--sage-light)),
+    var(--surface)
+  ) !important;
 }
 
 .accentSage {
-  background: linear-gradient(135deg, var(--sage-light), #fff) !important;
+  background: linear-gradient(135deg, var(--sage-light), var(--surface)) !important;
 }

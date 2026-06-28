@@ -1,33 +1,33 @@
 :root {
   /* Base */
-  --bg: #f2f5f0;
-  --bg-warm: #e6ebe4;
-  --surface: #fcfefb;
-  --surface-muted: #e8efe9;
-  --border: rgba(45, 58, 48, 0.11);
+  --bg: #e6ece6;
+  --bg-warm: #dce4dc;
+  --surface: #fbfcfb;
+  --surface-muted: #d4e0d6;
+  --border: rgba(36, 52, 42, 0.12);
   --text: #243028;
-  --muted: #526055;
-  --muted-2: #7a8b7e;
+  --muted: #4a6052;
+  --muted-2: #6a7d70;
 
-  /* Sage — основной акцент */
-  --sage: #527a59;
-  --sage-dark: #3f5f45;
-  --sage-light: #d0e2d4;
-  --sage-glow: rgba(82, 122, 89, 0.2);
+  /* Sage — средне-зелёный акцент */
+  --sage: #528a5c;
+  --sage-dark: #3d6b48;
+  --sage-light: #8fb39a;
+  --sage-glow: rgba(82, 138, 92, 0.26);
 
-  /* Peach — второй акцент */
-  --peach: #d4a898;
-  --peach-dark: #b88472;
-  --peach-light: #f0e8e2;
-  --peach-glow: rgba(212, 168, 152, 0.12);
+  /* Peach — приглушённый нейтраль */
+  --peach: #a89688;
+  --peach-dark: #887668;
+  --peach-light: #e4ded8;
+  --peach-glow: rgba(82, 138, 92, 0.14);
 
   /* Clay — тёплый нейтраль для глубины */
-  --clay: #b8c4b4;
-  --clay-light: #dde5da;
+  --clay: #9aaea0;
+  --clay-light: #c5d4c8;
 
   --primary: var(--sage);
   --primary-ink: #fffcf8;
-  --danger: #b85c52;
+  --danger: #b0554c;
 
   --shadow: 0 14px 44px rgba(42, 40, 36, 0.07);
   --shadow-sm: 0 4px 18px rgba(42, 40, 36, 0.05);
@@ -87,12 +87,12 @@ body {
     ),
     radial-gradient(
       720px 460px at 88% 4%,
-      var(--peach-glow),
+      color-mix(in srgb, var(--sage-glow) 70%, transparent),
       transparent 50%
     ),
     radial-gradient(
       640px 420px at 50% 100%,
-      rgba(82, 122, 89, 0.1),
+      rgba(61, 107, 72, 0.14),
       transparent 55%
     ),
     var(--bg);
