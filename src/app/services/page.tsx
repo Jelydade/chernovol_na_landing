@@ -20,10 +20,6 @@ export default function ServicesPage() {
         <section className={s.pageHero}>
           <div className={s.container}>
             <h1 className={s.h1}>Услуги и цены</h1>
-            <p className={s.lead} style={{ marginTop: 12 }}>
-              Психологическое консультирование и трансформационные игры — с
-              понятными форматами и стоимостью.
-            </p>
           </div>
         </section>
 
@@ -81,19 +77,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className={s.section}>
-          <div className={s.container}>
-            <div className={s.ctaBand}>
-              <h2 className={s.h2}>Не знаете, что выбрать?</h2>
-              <p className={s.sub}>
-                Напишите — помогу подобрать формат под ваш запрос.
-              </p>
-              <Link className={s.btnPrimary} href="/contacts#signup">
-                Записаться
-              </Link>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />

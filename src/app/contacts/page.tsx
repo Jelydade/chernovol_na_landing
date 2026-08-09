@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { ContactForm } from "@/components/landing/ContactForm";
 import { ContactChannels } from "@/components/landing/ContactChannels";
+import { ContactForm } from "@/components/landing/ContactForm";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
 import { site } from "@/lib/site";
 import s from "@/styles/site.module.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Контакты",
@@ -36,11 +36,11 @@ export default function ContactsPage() {
           <div className={s.container}>
             <h2 className={s.h2}>{site.city}</h2>
             <p className={s.sub} style={{ marginTop: 8 }}>
-              {site.address} — очные встречи по договорённости.
+              {site.address} — очные встречи по предварительной записи.
             </p>
             <div className={s.map} style={{ marginTop: 20 }}>
               <iframe
-                title="Карта — Красная 150, Краснодар"
+                title="Карта — г. Краснодар, ул. Коммунаров, 266, 3 этаж (рядом с Центром Города)"
                 src={site.mapEmbedUrl}
                 allowFullScreen
               />

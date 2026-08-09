@@ -1,17 +1,14 @@
 .gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 16px;
+  align-items: start;
 }
 
 .photoItem {
   display: grid;
   gap: 10px;
   margin: 0;
-}
-
-.photoItemWide {
-  grid-column: span 2;
 }
 
 .caption {
@@ -25,6 +22,8 @@
   position: relative;
   padding: 0;
   display: block;
+  width: min(100%, 440px);
+  justify-self: center;
 }
 
 .portraitImage {
@@ -36,10 +35,19 @@
   position: relative;
   padding: 0;
   display: block;
+  aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface-muted);
 }
 
 .workspaceImage {
-  object-fit: cover;
+  position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   object-position: center center;
 }
 
@@ -49,7 +57,8 @@
   align-items: center;
   aspect-ratio: auto;
   padding: 20px;
-  background: var(--surface-muted);
+  border: none;
+  background: transparent;
 }
 
 .conferenceImage {
@@ -59,12 +68,3 @@
   border-radius: calc(var(--radius-lg) - 2px);
 }
 
-@media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .photoItemWide {
-    grid-column: span 1;
-  }
-}

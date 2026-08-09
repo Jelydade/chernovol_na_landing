@@ -1,10 +1,10 @@
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { site } from "@/lib/site";
+import s from "@/styles/site.module.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { site } from "@/lib/site";
-import s from "@/styles/site.module.css";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
@@ -23,8 +23,8 @@ export default function AboutPage() {
           <div className={s.container}>
             <h1 className={s.h1}>Обо мне</h1>
             <p className={s.lead} style={{ marginTop: 12 }}>
-              {site.name} — {site.title.toLowerCase()}. Работаю с взрослыми людьми,
-              которые ищут не «поговорить», а системную работу с запросом.
+              {site.name} — {site.title.toLowerCase()}. Провожу индивидуальные
+              консультации и трансформационные игры.
             </p>
           </div>
         </section>
@@ -47,13 +47,13 @@ export default function AboutPage() {
               </figure>
 
               <figure className={styles.photoItem}>
-                <div className={`${s.photo} ${styles.workspace}`}>
-                  <Image
+                <div className={styles.workspace}>
+                  <img
                     src="/photos/workspace-cabinet.jpg"
                     alt="Кабинет для очных консультаций"
-                    fill
-                    sizes="(max-width: 600px) 100vw, 50vw"
                     className={styles.workspaceImage}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <figcaption className={styles.caption}>
