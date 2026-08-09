@@ -2,7 +2,6 @@ export {
   site,
   services,
   reviews,
-  education,
   serviceLabels,
   type ServiceId,
   type SiteConfig,

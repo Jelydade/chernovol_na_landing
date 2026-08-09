@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { education, site } from "@/lib/site";
+import { site } from "@/lib/site";
 import s from "@/styles/site.module.css";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
   title: "Обо мне",
   description:
-    "Гештальт-психолог: биография, образование, супервизия и подход к работе.",
+    "Гештальт-психолог: биография, супервизия и подход к работе.",
 };
 
 export default function AboutPage() {
@@ -84,16 +84,16 @@ export default function AboutPage() {
           <div className={s.container}>
             <div className={s.grid2}>
               <div>
-                <h2 className={s.h2}>Чем руковожусь в работе</h2>
+                <h2 className={s.h2}>Чем руководствуюсь в работе</h2>
                 <div className={s.prose} style={{ marginTop: 16 }}>
                   <p>
                     Для меня терапия — это безопасное пространство, где можно быть
-                    собой: со слабостью, сомнениями, злостью и надеждой. Я не даю
+                    собой: со слабостью, сомнениями, злостью и надеждой, со всем спектром переживаний. Я не даю
                     готовых рецептов, но помогаю услышать себя и найти опору.
                   </p>
                   <p>
                     Важны честность, уважение к вашему темпу и глубина. Я сама
-                    регулярно в процессе — личная терапия и супервизия для меня
+                    регулярно в процессе — личная терапия, супервизия, интенсивы для меня
                     не формальность, а часть профессиональной этики.
                   </p>
                 </div>
@@ -105,7 +105,7 @@ export default function AboutPage() {
                     Гештальт позволяет работать с целостным опытом — не только с
                     «головой», но и с телом, чувствами, образами. Это подход
                     «здесь и сейчас»: мы исследуем, что происходит между нами и
-                    внутри вас в момент сессии.
+                    внутри вас в момент сессии, и не только
                   </p>
                   <p>
                     Именно поэтому я выбрала его: он даёт глубину и одновременно
@@ -114,17 +114,6 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section className={s.section}>
-          <div className={s.container}>
-            <h2 className={s.h2}>Образование и повышение квалификации</h2>
-            <ul className={styles.list} style={{ marginTop: 20 }}>
-              {education.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
           </div>
         </section>
 

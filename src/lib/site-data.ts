@@ -1,13 +1,23 @@
 import siteJson from "../../content/site.json";
 import servicesJson from "../../content/services.json";
 import reviewsJson from "../../content/reviews.json";
-import educationJson from "../../content/education.json";
 
 export type ServiceId =
   | "consultation"
   | "game-money-individual"
+  | "game-money-group"
   | "game-perehody-individual"
-  | "game-group";
+  | "game-perehody-group";
+
+export const bookingServiceIds: ServiceId[] = [
+  "consultation",
+  "game-money-individual",
+  "game-money-group",
+  "game-perehody-individual",
+  "game-perehody-group",
+];
+
+export const isGameService = (service: ServiceId) => service !== "consultation";
 
 export type SiteConfig = typeof siteJson;
 export type Review = (typeof reviewsJson)[number];
@@ -18,4 +28,3 @@ export const services: Service[] = servicesJson.items;
 export const serviceLabels: Record<ServiceId, string> = servicesJson.labels;
 
 export const reviews: Review[] = reviewsJson;
-export const education: string[] = educationJson;

@@ -1,9 +1,10 @@
 {
   "labels": {
     "consultation": "Консультация психолога",
-    "game-money-individual": "Игра «Территория денег» (индивидуально)",
-    "game-perehody-individual": "Игра «Переходы» (индивидуально)",
-    "game-group": "Групповая игра"
+    "game-money-individual": "Игра «Территория денег» (Индивидуально)",
+    "game-money-group": "Игра «Территория денег» (Группа)",
+    "game-perehody-individual": "Игра «Переходы» (Индивидуально)",
+    "game-perehody-group": "Игра «Переходы» (Группа)"
   },
   "items": [
     {

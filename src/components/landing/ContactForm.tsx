@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { type ServiceId, serviceLabels } from "@/lib/site-data";
+import { type ServiceId, bookingServiceIds, isGameService, serviceLabels } from "@/lib/site-data";
 import {
   type ApplicationFormState,
   type ContactChannel,
@@ -37,7 +37,7 @@ export const ContactForm = ({ defaultService = "consultation" }: ContactFormProp
     name: "",
     contact: "",
     service: defaultService,
-    format: "any",
+    format: isGameService(defaultService) ? "offline" : "any",
     topic: "",
     consent: true,
     contactChannel: "telegram",
@@ -58,6 +58,24 @@ export const ContactForm = ({ defaultService = "consultation" }: ContactFormProp
     setCopied(false);
     setState((prev) => ({ ...prev, [key]: value }));
   };
+
+  const setService = (service: ServiceId) => {
+    setSubmitted(false);
+    setCopied(false);
+    setState((prev) => ({
+      ...prev,
+      service,
+      format: isGameService(service) ? "offline" : prev.format,
+    }));
+  };
+
+  const formatOptions = isGameService(state.service)
+    ? ([["offline", "Очно"]] as const)
+    : ([
+        ["any", "Любой"],
+        ["online", "Онлайн"],
+        ["offline", "Очно"],
+      ] as const);
 
   const copyMessage = async (message: string) => {
     try {
@@ -178,9 +196,9 @@ export const ContactForm = ({ defaultService = "consultation" }: ContactFormProp
         <select
           className={styles.select}
           value={state.service}
-          onChange={(e) => setField("service", e.target.value as ServiceId)}
+          onChange={(e) => setService(e.target.value as ServiceId)}
         >
-          {(Object.keys(serviceLabels) as ServiceId[]).map((id) => (
+          {bookingServiceIds.map((id) => (
             <option key={id} value={id}>
               {serviceLabels[id]}
             </option>
@@ -191,13 +209,7 @@ export const ContactForm = ({ defaultService = "consultation" }: ContactFormProp
       <fieldset className={styles.segmented} aria-label="Формат">
         <legend className={styles.label}>Формат</legend>
         <div className={styles.segRow}>
-          {(
-            [
-              ["any", "Любой"],
-              ["online", "Онлайн"],
-              ["offline", "Очно"],
-            ] as const
-          ).map(([value, label]) => (
+          {formatOptions.map(([value, label]) => (
             <button
               key={value}
               type="button"
