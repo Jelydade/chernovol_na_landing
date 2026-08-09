@@ -168,39 +168,6 @@
   gap: 10px;
 }
 
-.reviewGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.reviewCard {
-  padding: 22px;
-  border-radius: var(--radius-lg);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--sage);
-  display: grid;
-  gap: 12px;
-}
-
-.reviewText {
-  color: var(--muted);
-  line-height: 1.65;
-  font-style: italic;
-}
-
-.reviewMeta {
-  font-size: 13px;
-  color: var(--muted-2);
-}
-
-.reviewName {
-  font-weight: 650;
-  color: var(--text);
-  font-style: normal;
-}
-
 .approachText {
   display: grid;
   gap: 16px;
@@ -225,8 +192,7 @@
   }
 
   .serviceCards,
-  .gameCards,
-  .reviewGrid {
+  .gameCards {
     grid-template-columns: 1fr;
   }
 }

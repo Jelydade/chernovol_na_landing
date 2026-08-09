@@ -3,7 +3,7 @@ import { GameCover } from "@/components/landing/GameCover";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { getAllGames } from "@/lib/games";
-import { reviews, services, site } from "@/lib/site";
+import { services, site } from "@/lib/site";
 import s from "@/styles/site.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -191,25 +191,6 @@ export default function Home() {
                     </Link>
                   </div>
                 </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className={s.sectionAlt}>
-          <div className={s.container}>
-            <div className={s.sectionHeader}>
-              <h2 className={s.h2}>Отзывы</h2>
-            </div>
-            <div className={h.reviewGrid}>
-              {reviews.map((review) => (
-                <blockquote key={review.name} className={h.reviewCard}>
-                  <p className={h.reviewText}>«{review.text}»</p>
-                  <footer>
-                    <cite className={h.reviewName}>{review.name}</cite>
-                    <p className={h.reviewMeta}>{review.context}</p>
-                  </footer>
-                </blockquote>
               ))}
             </div>
           </div>
