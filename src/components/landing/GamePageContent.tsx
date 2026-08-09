@@ -1,9 +1,9 @@
-import Link from "next/link";
 import { ContactForm } from "@/components/landing/ContactForm";
 import { GameCover } from "@/components/landing/GameCover";
 import { type GameAccent } from "@/lib/games";
 import { type ServiceId } from "@/lib/site-data";
 import s from "@/styles/site.module.css";
+import Link from "next/link";
 
 type GamePageContentProps = {
   title: string;
@@ -89,14 +89,14 @@ export const GamePageContent = ({
         <div className={s.grid2}>
           <div className={s.card}>
             <h2 className={s.h3}>Индивидуально</h2>
-            <p className={s.cardText}>1,5–2 часа • онлайн</p>
+            <p className={s.cardText}>2-3 часа • очно</p>
             <p className={s.h2} style={{ marginTop: 8 }}>
               {individualPrice}
             </p>
           </div>
           <div className={s.card}>
             <h2 className={s.h3}>Группа (до 5 человек)</h2>
-            <p className={s.cardText}>3–4 часа • онлайн</p>
+            <p className={s.cardText}>2–3 часа • очно</p>
             <p className={s.h2} style={{ marginTop: 8 }}>
               {groupPrice}
             </p>

@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
 import { services } from "@/lib/site";
 import s from "@/styles/site.module.css";
+import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Услуги и цены",
@@ -71,7 +71,7 @@ export default function ServicesPage() {
                 <h2 className={s.h3}>Трансформационные игры</h2>
                 <p className={s.cardText}>
                   Индивидуально — 5 000 ₽ (1,5–2 часа). Группа до 5 человек —
-                  3 000 ₽/чел. (3–4 часа). Онлайн.
+                  3 000 ₽/чел. (3–4 часа). Очно.
                 </p>
                 <Link className={s.link} href="/#games">
                   Смотреть игры →

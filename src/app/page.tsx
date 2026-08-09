@@ -1,12 +1,12 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { ContactForm } from "@/components/landing/ContactForm";
 import { GameCover } from "@/components/landing/GameCover";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
 import { getAllGames } from "@/lib/games";
 import { reviews, services, site } from "@/lib/site";
 import s from "@/styles/site.module.css";
+import Image from "next/image";
+import Link from "next/link";
 import h from "./home.module.css";
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
                 </h1>
                 <p className={s.lead}>
                   Помогаю исследовать себя, находить опору и двигаться через
-                  жизненные изменения — в консультациях и трансформационных играх.
+                  жизненные изменения.
                 </p>
                 <div className={h.heroCtas}>
                   <Link className={s.btnPrimary} href="/services">
@@ -98,7 +98,7 @@ export default function Home() {
                 </p>
                 <ul className={s.prose} style={{ marginTop: 20 }}>
                   <li>Безопасность и конфиденциальность</li>
-                  <li>Экологичность — без давления и «дожима»</li>
+                  <li>Экологичность</li>
                   <li>Глубокая проработка запроса, а не поверхностный разговор</li>
                 </ul>
                 <Link className={s.link} href="/about" style={{ marginTop: 16, display: "inline-block" }}>
