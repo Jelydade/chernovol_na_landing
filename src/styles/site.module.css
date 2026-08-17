@@ -484,7 +484,37 @@ ul.prose {
 }
 
 @media (max-width: 900px) {
+  .headerInner {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .brand {
+    order: 1;
+  }
+
   .nav {
+    display: flex;
+    order: 2;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  .headerActions {
+    order: 3;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .navLink {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .brandSub {
     display: none;
   }
 

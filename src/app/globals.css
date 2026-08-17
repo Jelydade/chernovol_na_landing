@@ -130,3 +130,8 @@ img {
   height: auto;
   display: block;
 }
+
+img[data-nimg="fill"] {
+  max-width: none;
+  height: 100%;
+}
