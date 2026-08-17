@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { type ServiceId } from "@/lib/site-data";
 
 export type GameAccent = "peach" | "sage";
 
@@ -11,7 +10,6 @@ export type Game = {
   subtitle: string;
   metaDescription: string;
   accent: GameAccent;
-  defaultService: ServiceId;
   teaser: string;
   cover?: string;
   gallery?: string[];
@@ -34,7 +32,6 @@ const parseGameFile = (filePath: string): Game => {
     subtitle: data.subtitle,
     metaDescription: data.metaDescription,
     accent: data.accent,
-    defaultService: data.defaultService,
     teaser: data.teaser,
     cover: data.cover,
     gallery: data.gallery ?? [],

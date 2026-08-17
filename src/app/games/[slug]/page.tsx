@@ -34,7 +34,7 @@ export default async function GamePage({ params }: PageProps) {
 
   return (
     <div className={s.page}>
-      <Header />
+      <Header activePath="/games" />
       <main className={s.main}>
         <GamePageContent
           title={game.title}
@@ -42,7 +42,6 @@ export default async function GamePage({ params }: PageProps) {
           accent={game.accent}
           cover={game.cover}
           gallery={game.gallery}
-          defaultService={game.defaultService}
           forWho={game.forWho}
           results={game.results}
           process={game.process}

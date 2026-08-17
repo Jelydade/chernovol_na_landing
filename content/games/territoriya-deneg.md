@@ -12,7 +12,6 @@ gallery:
   - /photos/games/territoriya-deneg/03-board-session.jpg
   - /photos/games/territoriya-deneg/04-cards-session.jpg
   - /photos/games/territoriya-deneg/05-money-details.jpg
-defaultService: game-money-individual
 teaser: Для перехода на новый уровень дохода — проработка установок, внутренних блоков и отношения с деньгами. Не коучинг, а глубинная психологическая работа.
 individualPrice: 5 000 ₽
 groupPrice: 3 000 ₽/чел.

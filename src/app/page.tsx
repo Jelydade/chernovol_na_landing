@@ -1,4 +1,3 @@
-import { ContactForm } from "@/components/landing/ContactForm";
 import { GameCover } from "@/components/landing/GameCover";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -119,7 +118,7 @@ export default function Home() {
                 <p className={h.servicePrice}>{consultation.price}</p>
                 <p className={s.cardText}>{consultation.short}</p>
                 <div className={h.serviceActions}>
-                  <Link className={s.btnSmall} href="/contacts#signup">
+                  <Link className={s.btnSmall} href="/contacts">
                     Записаться
                   </Link>
                   <Link className={s.btnGhost} href="/services">
@@ -137,7 +136,7 @@ export default function Home() {
                   <p className={h.servicePrice}>{item.price}</p>
                   <p className={s.cardText}>{item.short}</p>
                   <div className={h.serviceActions}>
-                    <Link className={s.btnSmall} href="/contacts#signup">
+                    <Link className={s.btnSmall} href="/contacts">
                       Записаться
                     </Link>
                     {"href" in item && item.href ? (
@@ -194,21 +193,9 @@ export default function Home() {
               <p className={s.sub}>
                 Выберите удобный формат и запишитесь — отвечу в течение 24 часов.
               </p>
-              <Link className={s.btnPrimary} href="/contacts#signup">
+              <Link className={s.btnPrimary} href="/contacts">
                 Записаться
               </Link>
-            </div>
-          </div>
-        </section>
-
-        <section id="signup" className={s.sectionAlt}>
-          <div className={s.container}>
-            <div className={s.sectionHeader}>
-              <h2 className={s.h2}>Быстрая запись</h2>
-              <p className={s.sub}>Выберите услугу и формат — я свяжусь с вами.</p>
-            </div>
-            <div className={s.card}>
-              <ContactForm />
             </div>
           </div>
         </section>

@@ -47,6 +47,13 @@ export default function ServicesPage() {
                 </tbody>
               </table>
             </div>
+            <div className={s.ctaBand} style={{ marginTop: 24 }}>
+              <h2 className={s.h2}>Хотите познакомиться лично?</h2>
+              <p className={s.sub}>Запишитесь на консультацию или игру.</p>
+              <Link className={s.btnPrimary} href="/contacts">
+                Записаться
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -59,7 +66,7 @@ export default function ServicesPage() {
                   Индивидуальная работа с запросом: отношения, самореализация,
                   тревога, поиск себя. Очно или онлайн — 60 минут, 3 000 ₽.
                 </p>
-                <Link className={s.link} href="/contacts#signup">
+                <Link className={s.link} href="/contacts">
                   Записаться →
                 </Link>
               </article>
@@ -69,7 +76,7 @@ export default function ServicesPage() {
                   Индивидуально — 5 000 ₽ (1,5–2 часа). Группа до 5 человек —
                   3 000 ₽/чел. (3–4 часа). Очно.
                 </p>
-                <Link className={s.link} href="/#games">
+                <Link className={s.link} href="/games">
                   Смотреть игры →
                 </Link>
               </article>

@@ -1,5 +1,4 @@
 import { ContactChannels } from "@/components/landing/ContactChannels";
-import { ContactForm } from "@/components/landing/ContactForm";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { site } from "@/lib/site";
@@ -8,7 +7,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Контакты",
-  description: "Телефон, Telegram, WhatsApp, MAX и запись на консультацию или игру.",
+  description: "Телефон, Telegram, WhatsApp и MAX для связи.",
 };
 
 export default function ContactsPage() {
@@ -21,7 +20,7 @@ export default function ContactsPage() {
           <div className={s.container}>
             <h1 className={s.h1}>Контакты</h1>
             <p className={s.lead} style={{ marginTop: 12 }}>
-              Свяжитесь удобным способом или заполните форму записи.
+              Свяжитесь удобным для вас способом.
             </p>
           </div>
         </section>
@@ -48,17 +47,6 @@ export default function ContactsPage() {
           </div>
         </section>
 
-        <section id="signup" className={s.section}>
-          <div className={s.container}>
-            <div className={s.sectionHeader}>
-              <h2 className={s.h2}>Записаться</h2>
-              <p className={s.sub}>Выберите услугу и формат встречи.</p>
-            </div>
-            <div className={s.card}>
-              <ContactForm />
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />

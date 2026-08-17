@@ -4,9 +4,10 @@ import { site } from "@/lib/site";
 import styles from "@/styles/site.module.css";
 
 const nav = [
-  { href: "/services", label: "Услуги и цены" },
+  { href: "/", label: "Главная" },
   { href: "/about", label: "Обо мне" },
-  { href: "/#games", label: "Игры" },
+  { href: "/services", label: "Услуги и цены" },
+  { href: "/games", label: "Игры" },
   { href: "/contacts", label: "Контакты" },
 ];
 
@@ -44,7 +45,7 @@ export const Header = ({ activePath }: HeaderProps) => (
       </nav>
 
       <div className={styles.headerActions}>
-        <Link className={styles.btnHeader} href="/contacts#signup">
+        <Link className={styles.btnHeader} href="/contacts">
           Записаться
         </Link>
       </div>

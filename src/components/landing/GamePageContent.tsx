@@ -1,10 +1,7 @@
-import { ContactForm } from "@/components/landing/ContactForm";
 import { GameCover } from "@/components/landing/GameCover";
 import { GameGallery } from "@/components/landing/GameGallery";
 import { type GameAccent } from "@/lib/games";
-import { type ServiceId } from "@/lib/site-data";
 import s from "@/styles/site.module.css";
-import Link from "next/link";
 
 type GamePageContentProps = {
   title: string;
@@ -15,7 +12,6 @@ type GamePageContentProps = {
   forWho: string[];
   results: string[];
   process: string[];
-  defaultService: ServiceId;
   individualPrice: string;
   groupPrice: string;
 };
@@ -29,7 +25,6 @@ export const GamePageContent = ({
   forWho,
   results,
   process,
-  defaultService,
   individualPrice,
   groupPrice,
 }: GamePageContentProps) => (
@@ -125,21 +120,5 @@ export const GamePageContent = ({
       </div>
     </section>
 
-    <section id="signup" className={s.sectionAlt}>
-      <div className={s.container}>
-        <div className={s.sectionHeader}>
-          <h2 className={s.h2}>Запись на игру</h2>
-          <p className={s.sub}>Выберите формат — индивидуальный или групповой.</p>
-        </div>
-        <div className={s.card}>
-          <ContactForm defaultService={defaultService} />
-        </div>
-        <p className={s.sub} style={{ marginTop: 16, textAlign: "center" }}>
-          <Link className={s.link} href="/services">
-            Все услуги и цены
-          </Link>
-        </p>
-      </div>
-    </section>
   </>
 );

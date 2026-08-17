@@ -14,7 +14,6 @@ gallery:
   - /photos/games/perehody/06-group-session.jpg
   - /photos/games/perehody/07-game-closeup.jpg
   - /photos/games/perehody/08-card-in-hand.jpg
-defaultService: game-perehody-individual
 teaser: Для женщин в период жизненных изменений — кризис 30+, развод, смена профессии. Поддерживающая атмосфера и трансформация через образы и инициацию.
 individualPrice: 5 000 ₽
 groupPrice: 3 000 ₽/чел.

@@ -333,7 +333,7 @@ export default function AboutPage() {
             <div className={s.ctaBand}>
               <h2 className={s.h2}>Хотите познакомиться лично?</h2>
               <p className={s.sub}>Запишитесь на консультацию или игру.</p>
-              <Link className={s.btnPrimary} href="/contacts#signup">
+              <Link className={s.btnPrimary} href="/contacts">
                 Записаться
               </Link>
             </div>
