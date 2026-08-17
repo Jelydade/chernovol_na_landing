@@ -36,6 +36,20 @@
 
 .brandLogo {
   flex-shrink: 0;
+  filter: drop-shadow(0 6px 10px rgb(61 107 72 / 16%));
+  animation: brandLogoFloat 3.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes brandLogoFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-4px) rotate(2deg);
+  }
 }
 
 .brandText {
@@ -215,6 +229,42 @@
   height: 42px;
   padding: 0 16px;
   font-size: 14px;
+}
+
+.bookingAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+}
+
+.bookingActionRight {
+  flex-direction: row-reverse;
+}
+
+.bookingActionTop {
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bookingActionIcon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  line-height: 0;
+  filter: drop-shadow(0 5px 8px rgb(61 107 72 / 16%));
+  animation: bookingActionIconFloat 3.6s ease-in-out infinite;
+}
+
+@keyframes bookingActionIconFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-3px) rotate(2deg);
+  }
 }
 
 .link {
@@ -441,5 +491,12 @@ ul.prose {
   .grid2,
   .grid3 {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brandLogo,
+  .bookingActionIcon {
+    animation: none;
   }
 }

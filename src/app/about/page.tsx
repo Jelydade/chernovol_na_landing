@@ -1,3 +1,4 @@
+import { BookingAction } from "@/components/landing/BookingAction";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { site } from "@/lib/site";
@@ -333,9 +334,11 @@ export default function AboutPage() {
             <div className={s.ctaBand}>
               <h2 className={s.h2}>Хотите познакомиться лично?</h2>
               <p className={s.sub}>Запишитесь на консультацию или игру.</p>
-              <Link className={s.btnPrimary} href="/contacts">
-                Записаться
-              </Link>
+              <BookingAction
+                className={s.btnPrimary}
+                iconPlacement="top"
+                iconSize={64}
+              />
             </div>
           </div>
         </section>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/brand/Logo";
+import { BookingAction } from "@/components/landing/BookingAction";
 import { site } from "@/lib/site";
 import styles from "@/styles/site.module.css";
 
@@ -45,9 +46,11 @@ export const Header = ({ activePath }: HeaderProps) => (
       </nav>
 
       <div className={styles.headerActions}>
-        <Link className={styles.btnHeader} href="/contacts">
-          Записаться
-        </Link>
+        <BookingAction
+          className={styles.btnHeader}
+          iconPlacement="right"
+          iconSize={36}
+        />
       </div>
     </div>
   </header>
