@@ -172,13 +172,21 @@
 }
 
 @media (max-width: 900px) {
+  .hero {
+    background: var(--bg);
+  }
+
   .heroGrid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
   }
 
   .heroPhoto {
     order: -1;
     width: 100%;
+    min-height: 280px;
     max-height: 420px;
     aspect-ratio: 4 / 5;
   }
