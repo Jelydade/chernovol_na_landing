@@ -1,3 +1,4 @@
+import { BookingAction } from "@/components/landing/BookingAction";
 import { GameCover } from "@/components/landing/GameCover";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -193,12 +194,11 @@ export default function Home() {
               <p className={s.sub}>
                 Выберите удобный формат и запишитесь — отвечу в течение 24 часов.
               </p>
-              <div className={h.bookingLogo} aria-hidden="true">
-                <Image src="/logo.svg" alt="" width={64} height={64} />
-              </div>
-              <Link className={s.btnPrimary} href="/contacts">
-                Записаться
-              </Link>
+              <BookingAction
+                className={s.btnPrimary}
+                iconPlacement="top"
+                iconSize={64}
+              />
             </div>
           </div>
         </section>
