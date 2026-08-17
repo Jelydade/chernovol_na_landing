@@ -14,6 +14,7 @@ export type Game = {
   defaultService: ServiceId;
   teaser: string;
   cover?: string;
+  gallery?: string[];
   individualPrice: string;
   groupPrice: string;
   forWho: string[];
@@ -36,6 +37,7 @@ const parseGameFile = (filePath: string): Game => {
     defaultService: data.defaultService,
     teaser: data.teaser,
     cover: data.cover,
+    gallery: data.gallery ?? [],
     individualPrice: data.individualPrice,
     groupPrice: data.groupPrice,
     forWho: data.forWho ?? [],

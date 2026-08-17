@@ -5,6 +5,15 @@ subtitle: Игра для женщин в период жизненных изм
 metaDescription: Трансформационная игра для женщин в период жизненных изменений и инициации.
 accent: sage
 cover: /photos/games/perehody-board.jpg
+gallery:
+  - /photos/games/perehody-board.jpg
+  - /photos/games/perehody/01-details.jpg
+  - /photos/games/perehody/03-session-board.jpg
+  - /photos/games/perehody/04-session-table.jpg
+  - /photos/games/perehody/05-group-dialogue.jpg
+  - /photos/games/perehody/06-group-session.jpg
+  - /photos/games/perehody/07-game-closeup.jpg
+  - /photos/games/perehody/08-card-in-hand.jpg
 defaultService: game-perehody-individual
 teaser: Для женщин в период жизненных изменений — кризис 30+, развод, смена профессии. Поддерживающая атмосфера и трансформация через образы и инициацию.
 individualPrice: 5 000 ₽

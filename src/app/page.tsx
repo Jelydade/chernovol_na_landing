@@ -81,30 +81,21 @@ export default function Home() {
 
         <section className={s.section}>
           <div className={s.container}>
-            <div className={h.valuesGrid}>
-              <div className={h.valuesPhotos}>
-                <div className={h.valuesPhoto}>Терапия</div>
-                <div className={h.valuesPhoto}>Супервизия</div>
-                <div className={`${h.valuesPhoto} ${h.valuesPhotoWide}`}>
-                  Обучение / повышение квалификации
-                </div>
-              </div>
-              <div>
-                <h2 className={s.h2}>Ценности и компетентность</h2>
-                <p className={s.sub} style={{ marginTop: 12 }}>
-                  Регулярно прохожу личную терапию, супервизию и повышаю
-                  квалификацию. Я знаю, что такое быть в процессе — и как важно,
-                  чтобы рядом был профессионал.
-                </p>
-                <ul className={s.prose} style={{ marginTop: 20 }}>
-                  <li>Безопасность и конфиденциальность</li>
-                  <li>Экологичность</li>
-                  <li>Глубокая проработка запроса, а не поверхностный разговор</li>
-                </ul>
-                <Link className={s.link} href="/about" style={{ marginTop: 16, display: "inline-block" }}>
-                  Подробнее обо мне →
-                </Link>
-              </div>
+            <div className={h.valuesContent}>
+              <h2 className={s.h2}>Ценности и компетентность</h2>
+              <p className={s.sub} style={{ marginTop: 12 }}>
+                Регулярно прохожу личную терапию, супервизию и повышаю
+                квалификацию. Я знаю, что такое быть в процессе — и как важно,
+                чтобы рядом был тот, кто услышит вас и поможет вам найти выход.
+              </p>
+              <ul className={s.prose} style={{ marginTop: 20 }}>
+                <li>Безопасность и конфиденциальность</li>
+                <li>Экологичность</li>
+                <li>Глубокая проработка запроса, а не поверхностный разговор</li>
+              </ul>
+              <Link className={s.link} href="/about" style={{ marginTop: 16, display: "inline-block" }}>
+                Подробнее обо мне →
+              </Link>
             </div>
           </div>
         </section>

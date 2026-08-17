@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/landing/ContactForm";
 import { GameCover } from "@/components/landing/GameCover";
+import { GameGallery } from "@/components/landing/GameGallery";
 import { type GameAccent } from "@/lib/games";
 import { type ServiceId } from "@/lib/site-data";
 import s from "@/styles/site.module.css";
@@ -10,6 +11,7 @@ type GamePageContentProps = {
   subtitle: string;
   accent: GameAccent;
   cover?: string;
+  gallery?: string[];
   forWho: string[];
   results: string[];
   process: string[];
@@ -23,6 +25,7 @@ export const GamePageContent = ({
   subtitle,
   accent,
   cover,
+  gallery,
   forWho,
   results,
   process,
@@ -45,12 +48,16 @@ export const GamePageContent = ({
 
     <section className={s.section}>
       <div className={s.container}>
-        <GameCover
-          title={title}
-          cover={cover}
-          accent={accent}
-          variant="wide"
-        />
+        {gallery && gallery.length > 1 ? (
+          <GameGallery title={title} images={gallery} />
+        ) : (
+          <GameCover
+            title={title}
+            cover={cover}
+            accent={accent}
+            variant="wide"
+          />
+        )}
 
         <div className={s.grid2}>
           <div>
@@ -101,6 +108,19 @@ export const GamePageContent = ({
               {groupPrice}
             </p>
           </div>
+        </div>
+
+        <div className={s.ctaBand} style={{ marginTop: 24 }}>
+          <h2 className={s.h2}>Подарочный сертификат</h2>
+          <p className={s.sub}>
+            Подарочный сертификат можно оформить на индивидуальное или групповое
+            участие в любой из трансформационных игр. Такой подарок подойдёт
+            человеку, которому важно уделить время себе, исследовать актуальный
+            запрос и найти новые точки опоры.
+          </p>
+          <p className={s.sub}>
+            Игру, формат участия и удобную дату можно согласовать индивидуально.
+          </p>
         </div>
       </div>
     </section>

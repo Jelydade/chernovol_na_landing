@@ -5,6 +5,13 @@ subtitle: Игра-помощник при переходе на новый ур
 metaDescription: Трансформационная игра для проработки денежных установок и перехода на новый уровень дохода.
 accent: peach
 cover: /photos/games/territoriya-deneg-cover.jpg
+gallery:
+  - /photos/games/territoriya-deneg-cover.jpg
+  - /photos/games/territoriya-deneg/01-facilitator.jpg
+  - /photos/games/territoriya-deneg/02-player-move.jpg
+  - /photos/games/territoriya-deneg/03-board-session.jpg
+  - /photos/games/territoriya-deneg/04-cards-session.jpg
+  - /photos/games/territoriya-deneg/05-money-details.jpg
 defaultService: game-money-individual
 teaser: Для перехода на новый уровень дохода — проработка установок, внутренних блоков и отношения с деньгами. Не коучинг, а глубинная психологическая работа.
 individualPrice: 5 000 ₽

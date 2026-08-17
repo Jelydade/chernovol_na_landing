@@ -41,6 +41,7 @@ export default async function GamePage({ params }: PageProps) {
           subtitle={game.subtitle}
           accent={game.accent}
           cover={game.cover}
+          gallery={game.gallery}
           defaultService={game.defaultService}
           forWho={game.forWho}
           results={game.results}
