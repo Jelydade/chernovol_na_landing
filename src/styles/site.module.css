@@ -17,6 +17,7 @@
   z-index: 20;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
+  transform: translateZ(0);
 }
 
 .headerInner {
@@ -35,19 +36,18 @@
 
 .brandLogo {
   flex-shrink: 0;
-  filter: drop-shadow(0 6px 10px rgb(61 107 72 / 16%));
-  animation: brandLogoFloat 3.6s ease-in-out infinite;
   transform-origin: center;
+  animation: brandLogoFloat 3.6s ease-in-out infinite;
 }
 
 @keyframes brandLogoFloat {
   0%,
   100% {
-    transform: translateY(0) rotate(-2deg);
+    transform: translate3d(0, 0, 0) rotate(-2deg);
   }
 
   50% {
-    transform: translateY(-4px) rotate(2deg);
+    transform: translate3d(0, -6px, 0) rotate(2deg);
   }
 }
 
@@ -256,40 +256,12 @@
   display: inline-flex;
   flex: 0 0 auto;
   line-height: 0;
-  filter: drop-shadow(0 5px 8px rgb(61 107 72 / 16%));
 }
 
 .bookingActionIconInner {
   display: inline-flex;
   transform-origin: center;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  animation: bookingActionIconFloat 3.6s ease-in-out infinite;
-}
-
-@keyframes bookingActionIconFloat {
-  0%,
-  100% {
-    transform: translateZ(0) translateY(0) rotate(-2deg);
-  }
-
-  50% {
-    transform: translateZ(0) translateY(-3px) rotate(2deg);
-  }
-}
-
-.bookingActionIconSpinning {
-  animation: bookingActionIconSpin 500ms linear;
-}
-
-@keyframes bookingActionIconSpin {
-  from {
-    transform: translateZ(0) rotate(0deg);
-  }
-
-  to {
-    transform: translateZ(0) rotate(360deg);
-  }
+  will-change: transform;
 }
 .link {
   color: var(--sage-dark);
@@ -510,32 +482,66 @@ ul.prose {
 @media (max-width: 900px) {
   .headerInner {
     flex-wrap: wrap;
-    row-gap: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 12px;
+    row-gap: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
   .brand {
     order: 1;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .brandLogo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .brandTitle {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .headerActions {
+    order: 2;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .headerActions .bookingAction {
+    gap: 6px;
+  }
+
+  .headerActions .bookingActionIconInner img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .btnHeader {
+    height: 32px;
+    padding: 0 10px;
+    font-size: 12px;
+    border-radius: 10px;
   }
 
   .nav {
     display: flex;
-    order: 2;
-    width: 100%;
-    justify-content: flex-start;
-    gap: 4px;
-  }
-
-  .headerActions {
     order: 3;
     width: 100%;
-    justify-content: flex-end;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0;
   }
 
   .navLink {
-    font-size: 13px;
-    padding: 6px 10px;
+    font-size: 11px;
+    padding: 6px 4px;
+    border-radius: 8px;
+    white-space: nowrap;
   }
 
   .brandSub {
@@ -549,12 +555,7 @@ ul.prose {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .brandLogo,
-  .bookingActionIconInner {
+  .brandLogo {
     animation: none;
-  }
-
-  .bookingActionIconSpinning {
-    animation: bookingActionIconSpin 500ms linear;
   }
 }
