@@ -39,10 +39,12 @@ export default function ServicesPage() {
                 <tbody>
                   {services.map((item) => (
                     <tr key={item.id}>
-                      <td>{item.name}</td>
-                      <td>{item.format}</td>
-                      <td>{item.duration}</td>
-                      <td className={s.tablePrice}>{item.price}</td>
+                      <td data-label="Услуга">{item.name}</td>
+                      <td data-label="Формат">{item.format}</td>
+                      <td data-label="Длительность">{item.duration}</td>
+                      <td className={s.tablePrice} data-label="Стоимость">
+                        {item.price}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
