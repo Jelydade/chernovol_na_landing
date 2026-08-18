@@ -2,9 +2,8 @@
 
 import styles from "@/styles/site.module.css";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const SPIN_DURATION_MS = 500;
 const BOOKING_HREF = "/contacts";
@@ -31,21 +30,15 @@ export const BookingAction = ({
     top: styles.bookingActionTop,
   }[iconPlacement];
 
-  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  useEffect(() => {
+    router.prefetch(BOOKING_HREF);
+  }, [router]);
+
+  const handleClick = () => {
     if (isSpinning) {
-      event.preventDefault();
       return;
     }
 
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (prefersReducedMotion) {
-      return;
-    }
-
-    event.preventDefault();
     setIsSpinning(true);
     window.setTimeout(() => {
       router.push(BOOKING_HREF);
@@ -54,15 +47,21 @@ export const BookingAction = ({
 
   return (
     <span className={`${styles.bookingAction} ${placementClass}`}>
-      <span
-        className={`${styles.bookingActionIcon} ${isSpinning ? styles.bookingActionIconSpinning : ""}`}
-        aria-hidden="true"
-      >
-        <Image src="/logo.svg" alt="" width={iconSize} height={iconSize} />
+      <span className={styles.bookingActionIcon} aria-hidden="true">
+        <span
+          className={`${styles.bookingActionIconInner} ${isSpinning ? styles.bookingActionIconSpinning : ""}`}
+        >
+          <Image src="/logo.svg" alt="" width={iconSize} height={iconSize} />
+        </span>
       </span>
-      <Link className={className} href={BOOKING_HREF} onClick={handleClick}>
+      <button
+        className={className}
+        type="button"
+        onClick={handleClick}
+        aria-busy={isSpinning}
+      >
         Записаться{showArrow ? " →" : ""}
-      </Link>
+      </button>
     </span>
   );
 };

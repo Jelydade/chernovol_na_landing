@@ -101,11 +101,14 @@
   justify-content: center;
   height: 40px;
   padding: 0 16px;
+  border: 0;
   border-radius: 12px;
   font-size: 14px;
   font-weight: 600;
   background: var(--sage);
   color: var(--primary-ink);
+  cursor: pointer;
+  touch-action: manipulation;
   transition: transform 160ms ease, background 160ms ease;
 }
 
@@ -198,6 +201,8 @@
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.01em;
+  cursor: pointer;
+  touch-action: manipulation;
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
 }
 
@@ -252,31 +257,38 @@
   flex: 0 0 auto;
   line-height: 0;
   filter: drop-shadow(0 5px 8px rgb(61 107 72 / 16%));
+}
+
+.bookingActionIconInner {
+  display: inline-flex;
+  transform-origin: center;
+  transform: translateZ(0);
+  backface-visibility: hidden;
   animation: bookingActionIconFloat 3.6s ease-in-out infinite;
 }
 
 @keyframes bookingActionIconFloat {
   0%,
   100% {
-    transform: translateY(0) rotate(-2deg);
+    transform: translateZ(0) translateY(0) rotate(-2deg);
   }
 
   50% {
-    transform: translateY(-3px) rotate(2deg);
+    transform: translateZ(0) translateY(-3px) rotate(2deg);
   }
 }
 
 .bookingActionIconSpinning {
-  animation: bookingActionIconSpin 1000ms linear;
+  animation: bookingActionIconSpin 500ms linear;
 }
 
 @keyframes bookingActionIconSpin {
   from {
-    transform: rotate(0deg);
+    transform: translateZ(0) rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg);
+    transform: translateZ(0) rotate(360deg);
   }
 }
 .link {
@@ -538,7 +550,11 @@ ul.prose {
 
 @media (prefers-reduced-motion: reduce) {
   .brandLogo,
-  .bookingActionIcon {
+  .bookingActionIconInner {
     animation: none;
+  }
+
+  .bookingActionIconSpinning {
+    animation: bookingActionIconSpin 500ms linear;
   }
 }
