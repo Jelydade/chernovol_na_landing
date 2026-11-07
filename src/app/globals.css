@@ -1,19 +1,19 @@
 :root {
   /* Base */
-  --bg: #e6ece6;
-  --bg-warm: #dce4dc;
-  --surface: #fbfcfb;
-  --surface-muted: #d4e0d6;
-  --border: rgba(36, 52, 42, 0.12);
-  --text: #243028;
-  --muted: #4a6052;
-  --muted-2: #6a7d70;
+  --bg: #f5efe4;
+  --bg-warm: #e9decb;
+  --surface: #fffaf1;
+  --surface-muted: #e5e5d6;
+  --border: rgba(72, 65, 45, 0.16);
+  --text: #343c2d;
+  --muted: #626652;
+  --muted-2: #777966;
 
   /* Sage — средне-зелёный акцент */
-  --sage: #528a5c;
-  --sage-dark: #3d6b48;
-  --sage-light: #8fb39a;
-  --sage-glow: rgba(82, 138, 92, 0.26);
+  --sage: #187451;
+  --sage-dark: #10563c;
+  --sage-light: #c5dccc;
+  --sage-glow: rgba(147, 151, 111, 0.12);
 
   /* Peach — приглушённый нейтраль */
   --peach: #a89688;

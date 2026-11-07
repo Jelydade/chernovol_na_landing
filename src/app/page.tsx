@@ -23,40 +23,51 @@ export default function Home() {
           <div className={s.container}>
             <div className={h.heroGrid}>
               <div className={h.heroCopy}>
-                <p className={s.pill}>Очно / онлайн</p>
-                <h1 className={s.h1}>
-                  {site.title}. {site.tagline}
+                <p className={h.eyebrow}>Наталья Черновол · гештальт-психолог</p>
+                <h1 className={h.heroTitle}>
+                  Можно быть собой.<br />
+                  <em>И находить опору.</em>
                 </h1>
                 <p className={s.lead}>
                   Помогаю исследовать себя, находить опору и двигаться через
                   жизненные изменения.
                 </p>
                 <div className={h.heroCtas}>
-                  <Link className={s.btnPrimary} href="/services">
-                    Выбрать услугу
+                  <Link className={s.btnPrimary} href="/contacts">
+                    Давайте познакомимся <span aria-hidden="true">↗</span>
                   </Link>
                   <Link className={s.btnGhost} href="/about">
                     Обо мне
                   </Link>
                 </div>
+                <p className={h.heroNote}><span /> Встречи в Краснодаре и онлайн</p>
               </div>
-              <div className={h.heroPhoto}>
+              <div className={h.portraitComposition}>
+                <svg className={h.orbit} viewBox="0 0 520 640" fill="none" aria-hidden="true"><ellipse cx="260" cy="320" rx="220" ry="290" transform="rotate(17 260 320)" /><path d="M25 320h34m-17-17v34M456 111h28m-14-14v28" /></svg>
+                <div className={h.heroPhoto}>
                 <Image
-                  src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/photos/hero-portrait.jpg"}
+                  src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/photos/hero-portrait-clean.jpg"}
                   alt={`${site.name}, ${site.title.toLowerCase()}`}
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
                   className={h.heroPhotoImage}
                   priority
                 />
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className={s.sectionAlt}>
-          <div className={s.container}>
+        <section className={h.approachSection}>
+          <div className={`${s.container} ${h.approachGrid}`}>
+            <div className={h.approachVisual}>
+              <Image src="/photos/workspace-cabinet.jpg" alt="Кабинет для встреч с психологом" fill sizes="(max-width: 900px) 100vw, 45vw" />
+              <span className={h.visualLabel}>Место для вашего настоящего</span>
+            </div>
+            <div>
             <div className={s.sectionHeader}>
+              <p className={h.eyebrow}>01 / Подход</p>
               <h2 className={s.h2}>О гештальт-подходе</h2>
             </div>
             <div className={h.approachText}>
@@ -76,12 +87,15 @@ export default function Home() {
                 к вашему темпу и границам.
               </p>
             </div>
+            </div>
           </div>
         </section>
 
         <section className={s.section}>
           <div className={s.container}>
+            <div className={h.valuesLayout}>
             <div className={h.valuesContent}>
+              <p className={h.eyebrow}>02 / Что важно в работе</p>
               <h2 className={s.h2}>Ценности и компетентность</h2>
               <p className={s.sub} style={{ marginTop: 12 }}>
                 Регулярно прохожу личную терапию, супервизию и повышаю
@@ -97,12 +111,15 @@ export default function Home() {
                 Подробнее обо мне →
               </Link>
             </div>
+            <div className={h.valuesArt} aria-hidden="true"><span className={h.artCircle} /><span className={h.artArch} /><span className={h.artLine} /><p>контакт<br /><em>доверие</em><br />опора</p></div>
+            </div>
           </div>
         </section>
 
-        <section id="services" className={s.sectionAlt}>
+        <section id="services" className={h.servicesSection}>
           <div className={s.container}>
             <div className={s.sectionHeader}>
+              <p className={h.eyebrow}>03 / Форматы встреч</p>
               <h2 className={s.h2}>Услуги и цены</h2>
               <p className={s.sub}>
                 Консультации и трансформационные игры — разные форматы для разных
@@ -159,6 +176,7 @@ export default function Home() {
         <section id="games" className={s.section}>
           <div className={s.container}>
             <div className={s.sectionHeader}>
+              <p className={h.eyebrow}>04 / Исследование через игру</p>
               <h2 className={s.h2}>Трансформационные игры</h2>
               <p className={s.sub}>
                 Глубинная психологическая работа через образы, метафоры и
@@ -190,6 +208,7 @@ export default function Home() {
         <section className={s.section}>
           <div className={s.container}>
             <div className={s.ctaBand}>
+              <p className={h.eyebrow}>05 / Первый шаг</p>
               <h2 className={s.h2}>Готовы начать?</h2>
               <p className={s.sub}>
                 Выберите удобный формат и запишитесь — отвечу в течение 24 часов.
