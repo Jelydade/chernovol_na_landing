@@ -53,7 +53,7 @@ export const ContactChannels = () => (
       <article key={channel.id} className={s.card}>
         <img
           className={s.icon}
-          src={channel.iconSrc}
+          src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + channel.iconSrc}
           alt=""
           width={48}
           height={48}

@@ -59,7 +59,7 @@ export default function AboutPage() {
               <figure className={styles.photoItem}>
                 <div className={`${s.photo} ${styles.portrait}`}>
                   <Image
-                    src="/photos/portrait-red.jpg"
+                    src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/photos/portrait-red.jpg"}
                     alt={`${site.name}, ${site.title.toLowerCase()}`}
                     fill
                     sizes="(max-width: 600px) 100vw, 50vw"
@@ -72,7 +72,7 @@ export default function AboutPage() {
 
               <figure className={styles.photoItem}>
                 <Image
-                  src="/photos/professional-event.jpg"
+                  src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/photos/professional-event.jpg"}
                   alt={`${site.name} на профессиональном мероприятии`}
                   width={501}
                   height={750}
@@ -86,7 +86,7 @@ export default function AboutPage() {
 
               <figure className={styles.photoItem}>
                 <Image
-                  src="/photos/group-work.jpg"
+                  src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/photos/group-work.jpg"}
                   alt={`${site.name} во время групповой работы`}
                   width={579}
                   height={1024}
@@ -101,7 +101,7 @@ export default function AboutPage() {
               <figure className={styles.photoItem}>
                 <div className={styles.workspace}>
                   <img
-                    src="/photos/workspace-cabinet.jpg"
+                    src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/photos/workspace-cabinet.jpg"}
                     alt="Кабинет для очных консультаций"
                     className={styles.workspaceImage}
                     loading="lazy"
@@ -116,7 +116,7 @@ export default function AboutPage() {
               <figure className={`${styles.photoItem} ${styles.photoItemWide}`}>
                 <div className={`${s.photoWide} ${styles.conference}`}>
                   <Image
-                    src="/photos/conference.png"
+                    src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/photos/conference.png"}
                     alt={`${site.name} на гештальт-конференции`}
                     width={768}
                     height={1024}
@@ -131,7 +131,7 @@ export default function AboutPage() {
 
               <figure className={styles.photoItem}>
                 <Image
-                  src="/photos/gestalt-intensive.jpg"
+                  src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/photos/gestalt-intensive.jpg"}
                   alt={`${site.name} на гештальт-интенсиве`}
                   width={815}
                   height={1024}
@@ -145,7 +145,7 @@ export default function AboutPage() {
 
               <figure className={styles.photoItem}>
                 <Image
-                  src="/photos/training-certificate.jpg"
+                  src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/photos/training-certificate.jpg"}
                   alt={`${site.name} после профессионального обучения`}
                   width={768}
                   height={1024}
@@ -159,7 +159,7 @@ export default function AboutPage() {
 
               <figure className={styles.photoItem}>
                 <Image
-                  src="/photos/psychology-graduation.jpg"
+                  src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/photos/psychology-graduation.jpg"}
                   alt={`${site.name} с дипломами об образовании`}
                   width={768}
                   height={1024}
@@ -173,7 +173,7 @@ export default function AboutPage() {
 
               <figure className={styles.photoItem}>
                 <Image
-                  src="/photos/group-facilitation.jpg"
+                  src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/photos/group-facilitation.jpg"}
                   alt={`${site.name} во время ведения группы`}
                   width={766}
                   height={999}

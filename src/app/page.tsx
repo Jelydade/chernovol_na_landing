@@ -42,7 +42,7 @@ export default function Home() {
               </div>
               <div className={h.heroPhoto}>
                 <Image
-                  src="/photos/hero-portrait.jpg"
+                  src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/photos/hero-portrait.jpg"}
                   alt={`${site.name}, ${site.title.toLowerCase()}`}
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"

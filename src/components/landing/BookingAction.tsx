@@ -103,7 +103,7 @@ export const BookingAction = ({
       <span className={styles.bookingActionIcon} aria-hidden="true">
         <span ref={iconRef} className={styles.bookingActionIconInner}>
           <img
-            src="/logo.svg"
+            src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/logo.svg"}
             alt=""
             width={iconSize}
             height={iconSize}

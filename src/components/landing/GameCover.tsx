@@ -25,7 +25,7 @@ export const GameCover = ({
     return (
       <div className={`${baseClass} ${h.gameCoverPhoto}`}>
         <Image
-          src={cover}
+          src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + cover}
           alt={`Обложка «${title}»`}
           fill
           sizes={

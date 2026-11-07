@@ -38,7 +38,7 @@ export const GameGallery = ({ title, images }: GameGalleryProps) => {
       >
         <Image
           key={images[activeIndex]}
-          src={images[activeIndex]}
+          src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + images[activeIndex]}
           alt={`${title}: фотография ${activeIndex + 1} из ${images.length}`}
           fill
           sizes="(max-width: 600px) 100vw, 1120px"
@@ -83,7 +83,7 @@ export const GameGallery = ({ title, images }: GameGalleryProps) => {
             aria-current={index === activeIndex ? "true" : undefined}
           >
             <Image
-              src={image}
+              src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + image}
               alt=""
               fill
               sizes="84px"
