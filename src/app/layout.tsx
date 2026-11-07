@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   description:
     "Гештальт-терапия очно и онлайн, трансформационные игры «Территория денег» и «Переходы». Консультация — 3 000 ₽/час.",
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://chernovol-na-psy.ru"),
   icons: {
     icon: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.svg`,
     apple: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo.svg`,

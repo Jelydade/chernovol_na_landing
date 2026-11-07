@@ -4,7 +4,7 @@ import { getGameSlugs } from "@/lib/games";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://jelydade.github.io/chernovol_na_landing";
+  const baseUrl = "https://chernovol-na-psy.ru";
   const paths = ["", "about", "contacts", "services", "games"];
 
   return [...paths, ...getGameSlugs().map((slug) => `games/${slug}`)].map(

@@ -5,6 +5,6 @@ export const dynamic = "force-static";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: "https://jelydade.github.io/chernovol_na_landing/sitemap.xml",
+    sitemap: "https://chernovol-na-psy.ru/sitemap.xml",
   };
 }
