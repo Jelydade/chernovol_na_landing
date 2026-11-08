@@ -37,6 +37,7 @@
 
   --container: 1120px;
   --gutter: 20px;
+  --ambient-light: radial-gradient(ellipse 1000px 800px at 0% 25%, #a7c8b22e, transparent 90%), radial-gradient(ellipse 950px 1000px at 100% 70%, #d6c39638, transparent 90%);
 
   /* Альтернативы — раскомментируйте блок ниже и закомментируйте текущий */
 }
