@@ -18,7 +18,7 @@ export default function Home() {
     <div className={s.page}>
       <Header activePath="/" />
 
-      <main className={s.main}>
+      <main className={`${s.main} ${s.homeMain}`}>
         <section className={h.hero}>
           <div className={s.container}>
             <div className={h.heroGrid}>

@@ -3,11 +3,12 @@
   isolation: isolate;
   overflow: hidden;
   padding: 68px 0 84px;
-  background: linear-gradient(to top, var(--bg), transparent 160px), url('/paper-grain.svg') repeat, var(--ambient-light), radial-gradient(ellipse at 93% 18%, #dfd8bd80 0%, transparent 75%), linear-gradient(115deg, #faf6ed, #f0e6d6);
+  background: url('/paper-grain.svg') repeat, var(--ambient-light), radial-gradient(ellipse at 93% 18%, #dfd8bd80 0%, transparent 75%), linear-gradient(115deg, #faf6ed, #f0e6d6);
 }
 
 .hero::before,
 .hero::after {
+  display: none;
   content: "";
   position: absolute;
   z-index: -1;
@@ -71,12 +72,15 @@
 .heroTitle em { color: #187451; font-weight: 400; }
 .heroNote { display: flex; gap: 9px; align-items: center; font-size: 12px; color: #74796c; margin-top: 12px; }
 .heroNote span { width: 7px; height: 7px; border-radius: 50%; background: #8a9c6e; }
-.portraitComposition { position: relative; padding: 18px 24px 28px; min-width: 0; transform: rotate(2deg); }
-.portraitComposition::before { content: ""; position: absolute; inset: 48px 0 0 54px; background: #aeb394; transform: rotate(-6deg); border-radius: 3px; }
-.portraitComposition .heroPhoto { border: 8px solid #fffdf7; box-shadow: 0 18px 45px #4035221a; }
+.portraitComposition { position: relative; padding: 18px 24px 28px; min-width: 0; }
+.portraitComposition::before { content: ""; position: absolute; inset: 7px 13px 17px; background: linear-gradient(#187451, #187451) left top / 46px 2px no-repeat, linear-gradient(#187451, #187451) left top / 2px 46px no-repeat, linear-gradient(#187451, #187451) right bottom / 46px 2px no-repeat, linear-gradient(#187451, #187451) right bottom / 2px 46px no-repeat; }
+.portraitComposition .heroPhoto { border: 14px solid #fffdf6; border-bottom-width: 30px; border-radius: 2px; box-shadow: 0 14px 40px #193f3215; }
 .orbit { display: none; }
-.approachSection { position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(ellipse at 90% 15%, #f5efdc99, transparent 55%), #dfe3d1; padding: 88px 0; }
-.approachSection::before { content: ""; position: absolute; z-index: -1; right: -90px; bottom: -160px; width: 290px; height: 560px; background: url('/botanical-background.svg') center / contain no-repeat; opacity: .13; pointer-events: none; transform: rotate(22deg); }
+.approachSection { position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(ellipse at 90% 15%, #366d55, transparent 80%), #193f32; color: #f5f3e8; padding: 88px 0; }
+.approachSection .eyebrow { color: #c5d7ad; }
+.approachSection .approachText p { color: #e0e8db; }
+.approachSection .visualLabel { color: #343c2d; }
+.approachSection::before { content: ""; position: absolute; z-index: -1; inset: 0; background: url('/botanical-background.svg') right -85px bottom -100px / 290px 560px no-repeat, url('/botanical-background.svg') left -170px top -90px / 290px 560px no-repeat; filter: brightness(0) invert(1); opacity: .13; pointer-events: none; }
 .approachGrid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
 .approachVisual { position: relative; aspect-ratio: 4 / 5; border-radius: 4px 4px 120px 4px; overflow: hidden; }
 .approachVisual img { object-fit: cover; }
@@ -88,8 +92,8 @@
 .artCircle { position: absolute; width: 240px; height: 240px; border-radius: 50%; background: #e5eadb; z-index: -1; left: 0; top: 15px; }
 .artArch { position: absolute; width: 185px; height: 250px; border-radius: 100px 100px 3px 3px; background: #e8d6c1; z-index: -2; right: 0; bottom: 0; transform: rotate(15deg); }
 .artLine { position: absolute; inset: 25px; border: 1px solid #9d9b7b; border-radius: 50%; transform: rotate(-24deg); }
-.servicesSection { position: relative; isolation: isolate; overflow: hidden; padding: 84px 0; background: radial-gradient(ellipse at 20% 90%, #f7f1e5, transparent 60%), #e9decd; }
-.servicesSection::before { content: ""; position: absolute; z-index: -1; left: -120px; top: -120px; width: 320px; height: 640px; background: url('/botanical-background.svg') center / contain no-repeat; opacity: .13; pointer-events: none; transform: rotate(160deg); }
+.servicesSection { position: relative; isolation: isolate; overflow: hidden; padding: 84px 0; background: radial-gradient(ellipse at 85% 15%, #cfdfd4, transparent 75%), #e8ede5; }
+.servicesSection::before { content: ""; position: absolute; z-index: -1; inset: 0; background: url('/botanical-background.svg') left -150px top 10px / 300px 600px repeat-y, url('/botanical-background.svg') right -125px top 240px / 280px 560px repeat-y; opacity: .13; pointer-events: none; }
 
 .approachSection::after,
 .servicesSection::after {
@@ -97,8 +101,13 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(to bottom, var(--bg), transparent 160px, transparent calc(100% - 160px), var(--bg)), url('/paper-grain.svg') repeat;
+  background: url('/paper-grain.svg') repeat;
   pointer-events: none;
+}
+
+.approachSection::before,
+.servicesSection::before {
+  display: none;
 }
 
 .valuesContent {

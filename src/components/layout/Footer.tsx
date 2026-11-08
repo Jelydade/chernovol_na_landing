@@ -6,8 +6,7 @@ export const Footer = () => (
   <footer className={styles.footer}>
     <div className={`${styles.container} ${styles.footerInner}`}>
       <p className={styles.footerText}>
-        © {new Date().getFullYear()} {site.name}. Информация на сайте не
-        является публичной офертой и не заменяет очную медицинскую помощь.
+        © {new Date().getFullYear()} {site.name}
       </p>
       <nav className={styles.footerNav} aria-label="Подвал">
         <Link className={styles.footerLink} href="/services">
