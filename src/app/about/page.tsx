@@ -11,7 +11,7 @@ import styles from "./about.module.css";
 export const metadata: Metadata = {
   title: "Обо мне",
   description:
-    "Черновол Наталья Александровна — психолог, специалист в гештальт-подходе, ведущая трансформационных игр и групп.",
+    "Черновол Наталья — психолог, специалист в гештальт-подходе, ведущая трансформационных игр и групп.",
 };
 
 export default function AboutPage() {
@@ -25,7 +25,7 @@ export default function AboutPage() {
             <h1 className={s.h1}>Обо мне</h1>
             <div className={styles.bio}>
               <h2 className={styles.bioName}>
-                Черновол Наталья Александровна
+                Черновол Наталья
               </h2>
               <p className={styles.bioRole}>
                 Психолог, работаю в гештальт-подходе.
